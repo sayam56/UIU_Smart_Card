@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttendanceUpdateActivity"
+    android:background="@drawable/dashboard"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Attendance"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/attUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="C-name"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        />
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:gravity="center"
+     android:layout_marginTop="30dp"
+     >
+
+     <ImageView
+         android:id="@+id/defImage"
+         android:layout_width="48dp"
+         android:layout_height="48dp"
+         android:layout_marginStart="16dp"
+         android:layout_marginTop="16dp"
+         android:layout_marginBottom="16dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:srcCompat="@drawable/tick" />
+
+     <TextView
+         android:id="@+id/prTV"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Present"
+         android:textColor="#000000"
+         android:textSize="25dp"
+         android:layout_marginLeft="0dp"
+         />
+
+     <ImageView
+         android:id="@+id/crossImg"
+         android:layout_width="48dp"
+         android:layout_height="48dp"
+
+         android:layout_marginStart="16dp"
+         android:layout_marginTop="16dp"
+         android:layout_marginBottom="16dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:srcCompat="@drawable/cross" />
+
+     <TextView
+         android:id="@+id/abTV"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Absent"
+         android:textColor="#000000"
+         android:textSize="25dp"
+
+         />
+
+
+ </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recViewAtt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            app:stackFromEnd="true"
+            app:reverseLayout="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+</LinearLayout>

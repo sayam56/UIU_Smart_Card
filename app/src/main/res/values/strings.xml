@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">UIU Smart Card</string>
+    <string name="slogan_1">Enhancing Your University</string>\
+    <string name="slogan_2">Experience</string>
+    <string name="sidebar_name">Ali Iktider Sayam</string>
+    <string name="sidebar_role">Student</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="enter_student_id">ENTER STUDENT ID</string>
+    <string name="hint_sid">XXXXXXXXX</string>
+    <string name="search_sid">SEARCH</string>
+</resources>
