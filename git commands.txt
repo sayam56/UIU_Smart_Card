@@ -1,6 +1,6 @@
 Make new repo and push the existing code again to the new repo
 
-git init doesnít initialize if you already have a .git/ folder in your repository. So, for your case, do -
+git init doesn‚Äôt initialize if you already have a .git/ folder in your repository. So, for your case, do -
 
 (1) rm -rf .git/
 
@@ -8,10 +8,12 @@ git init doesnít initialize if you already have a .git/ folder in your repositor
 
 (3) git remote add origin https://repository.remote.url 1
 
-(4) git commit -m ìCommit messageî
+(4) git add .
 
-(5) git push -f origin master
+(5) git commit -m ‚ÄúCommit message‚Äù
+
+(6) git push -f origin master
 
 Note that all git configs like remote repositories for this repository are cleared in step 1. So, you have to setup all remote repository URLs again.
 
-Also, take care of the -f in step 5 : The remote already has some code base with n commits, and youíre trying to make all those changes into a single commit. So, force-pushing the changes to remote is necessary.
+Also, take care of the -f in step 5 : The remote already has some code base with n commits, and you‚Äôre trying to make all those changes into a single commit. So, force-pushing the changes to remote is necessary.
