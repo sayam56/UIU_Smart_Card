@@ -1,7 +1,7 @@
 <?php
 $t_name = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	# code...
+
 
 	$sec_name = $_POST['sec_name'];
 	$s_id = $_POST['s_id'];
@@ -40,7 +40,17 @@ try{
 			$c_nameObj = $conn->query($sql);
 			$nameTab = $c_nameObj->fetchAll();
 
-			foreach ($nameTab as $k) {
+			if ($key[0] <= $date) {
+				//echo $key[0]."<br>";
+				$temp++;
+
+			}
+
+
+
+			if ($c_nameObj -> rowCount() > 0) {
+
+				foreach ($nameTab as $k) {
 
 
 				if ($key[0] == $k[0]) {
@@ -48,21 +58,31 @@ try{
 					$jsonVal = $jsonVal.$k[0].""."+"; 
 
 
-				}
+				}/* inner if*/
+
+				}	/*foreach*/
 
 			}
+			
 
 			
-			if ($key[0] <= $date) {
-				//echo $key[0]."<br>";
-				$temp++;
-			}
-				
+							
 				/*array_push($testarr, $temp);*/
 		}
 
-		$absent = $temp-$present;
- 
+
+
+		if ($present == 0) {
+			$absent = $temp;
+			$present = 0;	
+		}else{
+			$absent = $temp-$present;
+ 	
+		}
+/*echo $absent;
+		
+		echo $present;*/
+		
 
 	}/* outer try block ends here*/
 catch(PDOException $e){
@@ -70,6 +90,7 @@ catch(PDOException $e){
                 }/*catch ends here*/
 
 
+                /*echo $jsonVal;*/
 	$pieces = explode("+", $jsonVal);
 
 	/*echo "<br>"; print_r($pieces); echo "<br>";
@@ -77,7 +98,23 @@ catch(PDOException $e){
 	/*echo '<pre>'; print_r($pieces); echo '</pre>';*/
 
 
+if (count($pieces)-1 == 0) {
+	$result[$count] = [
+			
+			"date" => 'null',
+
+			"present" => $present,
+			"absent" => $absent
+
+		];
+echo json_encode($result);
+}
+else{
+
+
 	for ($i=0; $i < count($pieces)-1 ; $i++) { 
+
+		
 
 		$result[$count] = [
 			
@@ -89,6 +126,7 @@ catch(PDOException $e){
 		];
 
 		$count++;
+
 
 	}
 
@@ -109,6 +147,12 @@ catch(PDOException $e){
 		echo json_encode($result);
 
 	}
+}
+
+
+
+
+
 }
 
 ?>

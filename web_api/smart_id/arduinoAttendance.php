@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 	//insert into attendance values (sec_name,t_id,s_id,date,time)
 
+ 
+
 	$codeQuery='';
 	$jsonVal="";
 	$s_id="";
@@ -91,45 +93,80 @@ echo "sec_name is: ".$sec_nameRes."<br>";
 echo "t_id is : ".$t_id."<br>";
 
 
-try{
-	$classDate= "SELECT * FROM classdate WHERE sec_name = '".$sec_nameRes."' and date='".$date."' ";
-	$cdObj = $conn->query($classDate);
-	
-	if ($cdObj->rowCount() == 0) {
-		echo "class not in session";
 
-	}else {
-		echo "class in session";
-		$insert = $conn->prepare("INSERT INTO attendance(`sec_name`, `t_id`, `s_id`, `date`) values('$sec_nameRes','$t_id','$s_id','$date')");
-		try{
-                $insert->execute();
-                 ?>
-                <script>
-	                window.alert("insertion Successfully");
-	                
-            	</script>
-            	<?php
-                }
-                catch(PDOException $ex)
-                {
-                ?>
-                <script>
-                    window.alert("Database insertion error");
-                </script>
-            	<?php
-            	}
-	}
+ try {
+     $check="SELECT state FROM attendance_state WHERE t_id='$t_id' AND sec_name='$sec_nameRes' and date='$date' ORDER BY attStateID DESC LIMIT 1; ";
+     $checkObj= $conn->query($check);
 
-	}/* outer try block ends here*/
-catch(PDOException $e){
-       
-                }/*catch ends here*/
+     if ($checkObj->rowCount() == 0) {
+     	echo "Attendance Not Initiated";
+     }
+     else{
+
+     	$checkTable= $checkObj->fetchAll();
+		 foreach ($checkTable as $key) {
+	          
+	           if ($key[0] == 'false') {
+	          	echo "Attendance Closed";
+
+	          }
+	          else{
+	          	echo 'attendance ready';
+
+          	try{
+				$classDate= "SELECT * FROM classdate WHERE sec_name = '".$sec_nameRes."' and date='".$date."' ";
+				$cdObj = $conn->query($classDate);
+				
+				if ($cdObj->rowCount() == 0) {
+					echo "class not in session";
+
+				}else {
+					echo "class in session";
+					$insert = $conn->prepare("INSERT INTO attendance(`sec_name`, `t_id`, `s_id`, `date`) values('$sec_nameRes','$t_id','$s_id','$date')");
+					try{
+			                $insert->execute();
+			                 echo "insertion success";
+			                }
+			                catch(PDOException $ex)
+			                {
+			                ?>
+			                <script>
+			                    window.alert("Database insertion error");
+			                </script>
+			            	<?php
+			            	}
+				}
+
+				}/* outer try block ends here*/
+			catch(PDOException $e){
+			       
+			                }/*catch ends here*/
+	          } /*attendance readyy*/
+	          		
+
+
+
+
+	          }/*attendance initiated foreach*/
+	          
+
+
+     }/*rowcount else*/
+     
+	        
+
+     
+   } catch (PDOException $e) {
+     echo $e;
+   }/*check query catch*/
 
 
 
 
 
 
-}
+
+
+} /*get if*/
 
 ?>
