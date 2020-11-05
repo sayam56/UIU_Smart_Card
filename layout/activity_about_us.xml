@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/aboutBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/back_button"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="-35dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:src="@drawable/gradientlogo"
+            android:layout_marginTop="25dp"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/aboutDev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed By:"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ali Iktider Sayam "
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+        <ImageButton
+            android:id="@+id/aboutBtn1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/facebooklogo4"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

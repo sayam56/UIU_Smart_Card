@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttendanceActivity"
+    android:orientation="vertical"
+    android:background="@drawable/dashboard">
+
+    <Button
+        android:id="@+id/attBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/back_button"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:layout_marginLeft="75dp"
+        android:text="Attendance"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Select Course"
+        android:textColor="#FFFFFF"
+        android:textSize="50dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+
+</LinearLayout>

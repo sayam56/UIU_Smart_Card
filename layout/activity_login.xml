@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:background="@drawable/background"
+    android:gravity="center"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tvUID"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:foregroundGravity="center"
+
+            android:gravity="center_horizontal" />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvRole"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:foregroundGravity="center"
+        android:textSize="25dp"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="center"
+        android:textAlignment="center"
+        android:hint="Name"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:enabled="false"
+
+        />
+
+    <EditText
+        android:id="@+id/etID"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="center"
+        android:textAlignment="center"
+        android:hint="Student ID"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        android:enabled="false"
+        />
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:textColor="#FFFFFF"
+        android:foregroundGravity="center"
+        android:textAlignment="center"
+        android:width="200dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:enabled="false"
+        />
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:textColor="#FFFFFF"
+        android:foregroundGravity="center"
+        android:textAlignment="center"
+        android:width="200dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:inputType="textVisiblePassword"
+        />
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:gravity="center"
+     android:layout_marginTop="50dp"
+     >
+
+     <Button
+         android:id="@+id/submitBtn"
+         android:layout_width="195dp"
+         android:layout_height="50dp"
+         android:text="SUBMIT"
+         android:textSize="20dp"
+         android:textStyle="bold"
+         android:background="@drawable/rounded_button"
+
+
+         />
+ </LinearLayout>
+
+
+</LinearLayout>

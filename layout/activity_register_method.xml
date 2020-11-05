@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterMethod"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/cardBtn"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:text="WITH CARD"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        >
+        <Button
+            android:id="@+id/idBTN"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:text="WITH ID"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+</LinearLayout>
